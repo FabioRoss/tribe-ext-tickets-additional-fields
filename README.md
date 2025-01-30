@@ -54,7 +54,7 @@ function custom_tickets_additional_fields( $ticket_fields ) {
 			'label'       => esc_html__( 'Subject' ),
 			'description' => esc_html__( 'Choose an option to specify the subject' ),
 			'options'	  => [
-				''			=>	'Choose an option (placeholder)',
+				''		=>	'Choose an option (placeholder)',
 				'math'		=>	'Math',
 				'it'		=>	'Computer Science',
 				'history'	=>	'History',
