@@ -49,6 +49,18 @@ function custom_tickets_additional_fields( $ticket_fields ) {
 			'description' => esc_html__( 'Check box if attendance is mandatory' ),
 		];
 
+		$ticket_fields['subject'] = [
+			'type'        => 'select',
+			'label'       => esc_html__( 'Subject' ),
+			'description' => esc_html__( 'Choose an option to specify the subject' ),
+			'options'	  => [
+				''			=>	'Choose an option (placeholder)',
+				'math'		=>	'Math',
+				'it'		=>	'Computer Science',
+				'history'	=>	'History',
+			],
+		];
+
 		return $ticket_fields;
 }
 

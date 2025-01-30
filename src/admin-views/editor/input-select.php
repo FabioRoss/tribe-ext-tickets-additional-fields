@@ -1,7 +1,7 @@
 <?php
 /**
  * @var WP_Post $post
- * @var array  $field_data  The field data.
+ * @var array  $field_data  The field data. [type, label, description, (options)]
  * @var string $field_id    The field ID.
  * @var string $field_value The field value.
  */
@@ -18,13 +18,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</label>
 <?php endif; ?>
 
-<input
-	type="email"
-	id="<?php echo esc_attr( $field_id ); ?>"
-	name="<?php echo esc_attr( $field_id ); ?>"
-	class="ticket_field ticket_form_right"
-	value="<?php echo esc_attr( $field_value ); ?>"
+
+<select 
+    id="<?php echo esc_attr( $field_id ); ?>"
+    name="<?php echo esc_attr( $field_id ); ?>"
+    class="ticket_field ticket_form_right" 
 >
+
+<?php foreach ($field_data["options"] as $value => $label) : ?>
+
+<option 
+    value="<?php echo esc_attr($value); ?>" 
+    <?php selected($value, $field_value, true); ?>
+>
+
+<?php echo esc_html($label); ?>
+
+</option>
+<?php endforeach; ?>
+
+</select>
+
 
 <?php if ( ! empty( $field_data[ 'description' ] ) ) : ?>
 	<p class="description ticket_form_right">
