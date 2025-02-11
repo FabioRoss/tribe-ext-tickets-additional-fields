@@ -129,3 +129,4 @@ function my_custom_additional_field_shortcode_printing( $html, $ticket_id, $fiel
 -   `email` - Email (when being printed for the shortcode will add the HTML for the email link).
 -   `number` - Number.
 -   `checkbox` - Checkbox.
+-   `select` - Select. add options by including an `options` array of "key" => "value" pairs. Leave first key blank for placeholder.
